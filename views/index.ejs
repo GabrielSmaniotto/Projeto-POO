@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Cartão de Estudante</title>
+</head>
+
+<body>
+    <div>
+        <h1>Gerador de Carterinha de estudante</h1>
+    </div>
+    <hr>
+    <div id="formulario"></div>
+        <form action="/scan" method="POST">
+            <div>
+                <label for="url"></label>
+                <input name="url" class="form-control" type="text" id="iurl" placeholder="Url">
+                
+                <label for="nome"></label>
+                <input name="nome" class="form-control" type="text" id="inome" placeholder="Nome">
+                
+                <label for="idade"></label>
+                <input name="idade" class="form-control" type="int" id="iidade" placeholder="Idade">
+                
+                <label for="email"></label>
+                <input name="email" class="form-control" type="email" id="iemail" placeholder="Email">
+            
+                <label for="instituicao"></label>
+                <input name="instituicao" class="form-control" type="text" id="iinst" placeholder="Instituicao">
+                
+            </div>
+                <br>
+                <button id="enviar" type="submit" value="Gerrar QR">Gerrar QR</button>
+        </form>
+    </div>
+    <script>
+        //inputs 
+        dados.inome = document.getElementById('nome').value;
+        dados.iidade = document.getElementById('idade').value;
+        dados.iemail = document.getElementById('email').value;
+        dados.iinst = document.getElementById('instituicao').value;
+        dados.iurl = document.getElementById('url').value;
+        // Var objeto que será guardado
+        var obj;
+      
+        //Quando clicar
+        document.getElementById('enviar').addEventListener('click', function() {
+          obj = {
+            inome: inome.value,
+            iidade: iagencia.value,
+            iemail: iemail.value,
+            iinst: iinst.value,
+            iurl: iurl.value
+          };
+      
+          //Mostra no console o objeto antes de salvar
+          console.log(obj.valueOf());
+      
+          //Salva o objeto 
+          localStorage[nome.value] = JSON.stringify(obj);
+      
+          //Mostra no console o objeto salvo
+          console.log(JSON.parse(localStorage[nome.value]).valueOf());
+        });
+      </script>
+
+</body>
+
+</html>

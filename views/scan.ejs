@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Gerador de Carteira de Estudante</title>
+</head>
+
+<body>
+    <div id="print" class="data">
+        <h1>Carteira gerado!</h1>
+        <img src=<%=src%> alt="QRCode">
+        <p>
+            <%-corpo.url -%><br>
+            <%-corpo.nome -%><br>
+            <%-corpo.idade -%><br> 
+            <%-corpo.email -%><br>
+            <%-corpo.instituicao -%>
+        </p>
+        
+    </div>
+
+<script>
+    function cont(){
+        var conteudo = document.getElementById('print').innerHTML;
+        tela_impressao = window.open('about:blank');
+        tela_impressao.document.write(data);
+        tela_impressao.window.print();
+        tela_impressao.window.close();
+    }
+</script>   
+        <p>Faça o Scaneamento do QRCode para ver os dados!</p>
+        <a href="/"><button>Voltar</button></a>
+</body>
+
+</html>
